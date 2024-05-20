@@ -15,6 +15,7 @@
     "typeRoots": ["./src/types"],
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["./*.js", "src/**/*.ts"],
-  "exclude": ["build"]
+  "include": ["./*.js", "src/**/*.ts", "jest.config.js"],
+  "exclude": ["build"],
+  "types": ["jest"]
 }

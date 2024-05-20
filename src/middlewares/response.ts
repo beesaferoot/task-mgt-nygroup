@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { HttpStatusCode } from "axios";
-import IResponse from "../interfaces/IResponse";
+import { Request, Response, NextFunction } from "express"
+import { HttpStatusCode } from "axios"
+import IResponse from "../interfaces/IResponse"
 
 /**
  * Use the custom response middleware to extend express response object.
@@ -21,8 +21,8 @@ export const response = (_req: Request, res: Response, next: NextFunction) => {
     return this.status(statusCode).json({
       message: message,
       ...{ data },
-    });
-  };
+    })
+  }
 
   /**
    * Returns a error response
@@ -39,8 +39,8 @@ export const response = (_req: Request, res: Response, next: NextFunction) => {
     return this.status(statusCode).json({
       message: message,
       ...{ errors },
-    });
-  };
+    })
+  }
 
-  next();
-};
+  next()
+}

@@ -1,10 +1,10 @@
-import chalk from "chalk";
-import { Router } from "express";
+import chalk from "chalk"
+import { Router } from "express"
 
 export const displayRoutes = (prefix: string, routers: Router[]) => {
   const routes = routers
     .map((router: Router) => router.stack.map((routes: any) => routes.route))
-    .flat();
+    .flat()
 
   console.log(
     "\nAPI routes: \r\n\b",
@@ -17,5 +17,5 @@ export const displayRoutes = (prefix: string, routers: Router[]) => {
       )
       .join("\n"),
     "\n"
-  );
-};
+  )
+}

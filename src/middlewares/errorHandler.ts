@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from "express";
-import { HttpError } from "http-errors";
-import { HttpStatusCode } from "axios";
-import ErrorResponse from "../interfaces/IError";
+import { NextFunction, Request, Response } from "express"
+import { HttpError } from "http-errors"
+import { HttpStatusCode } from "axios"
+import ErrorResponse from "../interfaces/IError"
 
 export function errorHandler(
   err: HttpError,
@@ -9,7 +9,7 @@ export function errorHandler(
   res: Response,
   _next: NextFunction
 ): Response<ErrorResponse> {
-  console.error("🚨", err);
+  console.error("🚨", err)
 
   return res.status(err.statusCode).json({
     message:
@@ -18,7 +18,7 @@ export function errorHandler(
         : err.message,
     ...(process.env.NODE_ENV !== "production" && {
       error: err,
-      stack: err.stack,
+      // stack: err.stack,
     }),
-  });
+  })
 }
